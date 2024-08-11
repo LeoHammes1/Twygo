@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8080:8080" 
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    networks: 
+      - node-network
+    depends_on:
+      - backend
+      - frontend
+
+  backend:
+    build: ./twygoBack
+    container_name: backend
+    environment:
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://mongo:27017/threewygo_prod
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    tty: true
+    networks: 
+      - node-network
+    
+
+  frontend:
+    build: ./twygoFront
+    container_name: frontend
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+    tty: true
+    networks:
+      - node-network
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks: 
+      - node-network
+    volumes:
+      - mongo-data:/data/db
+    restart: always
+
+volumes:
+  mongo-data:
+
+networks: 
+  node-network:
+    driver: bridge  

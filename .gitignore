@@ -1,0 +1,28 @@
+# Ignore node_modules
+twygoBack/node_modules/
+twygoFront/node_modules/
+
+# Logs
+twygoBack/logs
+twygoBack/*.log
+twygoBack/logs/**/*.log
+
+twygoFront/logs
+twygoFront/*.log
+twygoFront/logs/**/*.log
+
+# Production
+twygoBack/build/
+twygoFront/build/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+
+# MacOS files
+.DS_Store
+
+
+
+
