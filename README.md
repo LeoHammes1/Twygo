@@ -30,7 +30,7 @@ Para rodar a aplicação em seu ambiente local, siga os passos abaixo:
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu-usuario/twygo-tecnico.git
+   git clone https://github.com/LeoHammes1/Twygo.git
    cd twygo-tecnico
    ```
 
