@@ -31,7 +31,7 @@ Para rodar a aplicação em seu ambiente local, siga os passos abaixo:
 
    ```bash
    git clone https://github.com/LeoHammes1/Twygo.git
-   cd twygo-tecnico
+   cd Twygo
    ```
 
 2. **Construa e inicie os contêineres:**
